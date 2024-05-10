@@ -1,0 +1,24 @@
+{
+    "manifest_version": 3,
+    "name": "YC Application Monitor",
+    "version": "1.0",
+    "permissions": [
+        "storage",
+        "notifications",
+        "activeTab",
+        "*://www.ycombinator.com/apply*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.ycombinator.com/apply"],
+            "js": ["content.js"]
+        }
+    ],
+    "icons": {
+        "48": "icon.png",
+        "128": "icon.png"
+    }
+}
